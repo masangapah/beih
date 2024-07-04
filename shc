@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Update package list and install necessary dependencies
+sudo apt-get update
+sudo apt-get install -y git automake autoconf libtool make gcc
+
+# Clone the SHC repository
+git clone https://github.com/neurobin/shc.git
+
+# Navigate to the SHC directory
+cd shc
+
+# Configure and compile SHC
+./configure
+make
+
+# Install SHC
+sudo make install
+
+# Verify the installation
+shc -v
